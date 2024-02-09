@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            opacity: 1;
+            transition: background-color 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+        }
+
+        section.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        section:hover {
+            background-color: #f8f8f8;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            transition: background-color 0.5s ease;
+        }
+
+        .hidden-paragraph {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffc107;
+            border-radius: 5px;
+            text-align: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .hidden-paragraph.show {
+            display: block;
+        }
+
+        /* Styling for the clickable text */
+        .clickable-text {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Yuen</h1>
+    </header>
+
+    <section id="section1" class="current-section">
+
+        <p>This website is dedicated to <strong>Yuen</strong>.</p>
+
+        <p>I know we were just getting to know each other, and I'm also happy that we're talking to each other, and I want to make you happy.</p>
+
+        <!-- Wrap the clickable text in a div with a class for styling -->
+        <div class="clickable-text" id="clickHereYuen">
+            <strong>>>CLICK HERE YUEN!<<</strong>
+        </div>
+
+    </section>
+
+    <footer>
+    </footer>
+
+    <div id="hiddenParagraph" class="hidden-paragraph">
+        <p>OPEN MO ML MO, HUWAG KA NA MAGTANONG HAHAHAHA</p>
+    </div>
+
+    <script>
+        document.getElementById('clickHereYuen').addEventListener('click', () => {
+            const sections = document.querySelectorAll('section');
+            const hiddenParagraph = document.getElementById('hiddenParagraph');
+
+            sections.forEach(section => {
+                section.classList.remove('current-section', 'hide');
+            });
+            sections[0].classList.add('hide');
+            setTimeout(() => {
+                sections[0].classList.add('current-section');
+                hiddenParagraph.classList.add('show');
+            }, 50);
+        });
+    </script>
+</body>
+
+</html>
